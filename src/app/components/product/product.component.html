@@ -1,18 +1,25 @@
-
-<div class="container">
-<table class="table table-dark table-hover">
+<div class="d-flex justify-content-center">
+<div *ngIf="dataLoaded==false"  class="spinner-grow text-success " style="width: 4rem; height: 4rem;" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<table *ngIf="dataLoaded==true" class="table table-dark table-hover">
     <thead>
         <tr>
-            <th></th>
+            <th class="text-primary">Id</th>
+            <th class="text-success">Name</th>
+            <th class="text-warning">Price</th>
+            <th class="text-info">Category</th>
+            <th class="text-danger">Units In Stock</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let product of products">
             <td>{{product.productId}}</td>
             <td>{{product.productName}}</td>
-            <td>{{product.productPrice}}</td>
+            <td>{{product.unitPrice}}</td>
             <td>{{product.categoryId}}</td>
+            <td>{{product.unitsInStock}}</td>
         </tr>
     </tbody>
 </table>
-</div>
