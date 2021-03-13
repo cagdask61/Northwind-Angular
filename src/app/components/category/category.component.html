@@ -1,7 +1,12 @@
 
-<div class="list-group" id="list-tab" role="tablist">
-  <a class="list-group-item list-group-item-action list-group-item-dark"  data-bs-toggle="list" href="#" role="tab" aria-controls="home">Home</a>
-  <a class="list-group-item list-group-item-action list-group-item-dark" id="list-profile-list" data-bs-toggle="list" href="#" role="tab" aria-controls="profile">Profile</a>
-  <a class="list-group-item list-group-item-action list-group-item-dark" id="list-messages-list" data-bs-toggle="list" href="#" role="tab" aria-controls="messages">Messages</a>
-  <a class="list-group-item list-group-item-action list-group-item-dark" id="list-settings-list" data-bs-toggle="list" href="#" role="tab" aria-controls="settings">Settings</a>
-</div>
+<ul class="list-group" >
+  <li (click)="setCurrentCategory(category)" 
+  routerLink="/products/category/{{category.categoryId}}"
+  *ngFor="let category of categories" 
+  [class]="getCurrentCategoryClass(category)"   href="#" >
+    {{category.categoryName}}
+  </li>
+</ul>
+<h2 *ngIf="currentCategory" class="text-light">
+  {{currentCategory.categoryName}}
+</h2>
