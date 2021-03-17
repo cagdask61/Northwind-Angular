@@ -31,9 +31,18 @@ export class CategoryComponent implements OnInit {
 
   getCurrentCategoryClass(category:Category){
     if(category ==this.currentCategory){
-      return "text-center list-group-item active"
+      return "text-center list-group-item active cursorpointer"
     }else{
-      return "text-center list-group-item"
+      return "text-center list-group-item cursorpointer"
+    }
+  }
+
+  getAllCategoryClass(){
+    if(!this.currentCategory){
+      return "list-group-item active text-center cursorpointer"
+    }
+    else{
+      return "list-group-item text-center cursorpointer"
     }
   }
 }
