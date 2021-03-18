@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartItem } from 'src/app/models/cartItem';
 import { Product } from 'src/app/models/product';
 import { CartService } from 'src/app/services/cart.service';
+import { DetailComponent } from '../detail/detail.component';
 
 @Component({
   selector: 'app-cart-summary',
@@ -16,7 +17,6 @@ export class CartSummaryComponent implements OnInit {
   ngOnInit(): void {
     this.getCart();
   }
-
 
 
   getCart(){
